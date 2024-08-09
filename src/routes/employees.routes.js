@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
   getEmployees,
+  getEmployee,
   createEmployees,
   updateEmployees,
   deleteEmployees,
@@ -10,8 +11,10 @@ export const employeesRouter = Router();
 
 employeesRouter.get("/employees", getEmployees);
 
+employeesRouter.get("/employees/:id", getEmployee);
+
 employeesRouter.post("/employees", createEmployees);
 
-employeesRouter.patch("/employees", updateEmployees);
+employeesRouter.patch("/employees/:id", updateEmployees);
 
-employeesRouter.delete("/employees", deleteEmployees);
+employeesRouter.delete("/employees/:id", deleteEmployees);
